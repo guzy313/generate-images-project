@@ -1,0 +1,17 @@
+server:
+  port: 8085
+  servlet:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  application:
+    name: generate-images-project
+  thymeleaf:
+    mode: HTML
+    prefix: classpath:/static/
+  mvc:
+    static-path-pattern: /static/**

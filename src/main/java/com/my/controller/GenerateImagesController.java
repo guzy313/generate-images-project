@@ -20,7 +20,8 @@ public class GenerateImagesController {
 
     @RequestMapping("/generateAImage")
     public void generate(HttpServletRequest request, HttpServletResponse response)throws Exception{
-        String image = generateImagesService.generateAImage();//生成图片的文件流字符串
+        String prompt = request.getParameter("prompt");
+        String image = generateImagesService.generateAImage(prompt);//生成图片的文件流字符串
         byte[] imageBytes = Base64.getDecoder().decode(image);
         ByteArrayInputStream inputStream = new ByteArrayInputStream(imageBytes);
 

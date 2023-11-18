@@ -17,6 +17,8 @@
 </head>
 <body>
     <div class="main">
+        <span>请输入你想生成的图片</span>
+        <input type="text" id="prompt"  style="width: 300px;">
         <button onclick="generateImg()">生成图片</button>
         <div class="imageDiv"></div>
     </div>
@@ -25,7 +27,8 @@
 </html>
 <script>
     function generateImg() {
-        window.location.href="/generateImages/generateAImage";
+        var prompt = $("#prompt").val();
+        window.location.href="/generateImages/generateAImage?prompt="+prompt;
         /*
         $.ajax({
             url: '/generateImages/generateAImage',

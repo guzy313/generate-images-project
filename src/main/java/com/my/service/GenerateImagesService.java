@@ -35,9 +35,9 @@ public class GenerateImagesService {
         }
     }
 
-    public String generateAImage() throws Exception{
+    public String generateAImage(String prompt) throws Exception{
         StableDiffusionTextToImg body = getArtisticWordStableDiffusionTextToImgWithParams(
-                "MoyouArtificial_v1060","girl","",-1,768,512,1,28
+                "MoyouArtificial_v1060",StringUtils.isEmpty(prompt)?"girl":prompt,"",-1,768,512,1,28
 
         );
         final List<String> images = callSdApi(body);
